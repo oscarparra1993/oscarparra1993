@@ -52,9 +52,10 @@ getData(major){
  
  
  var data=JSON.parse(request.responseText);  
- students=data.filter(getstudentds(major)){
-	return students.major==major;
- });
+ students=data.filter(getstudentds)
+  function getstudentds(student) {
+            return student.major == major;   // the new meal_items array will contain only items for the selected meal
+         }
  if(request.status ==200){
   var templateText = document.getElementById('tableTemplate').innerHTML;
   var compiledTemplateText = Handlebars.compile(templateText);       
@@ -69,3 +70,4 @@ getData(major){
  </script>
  
 </html>
+
